@@ -13,9 +13,10 @@ class AuthenticationsIconsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      onTap: onPressed,
       child: Container(
         margin: EdgeInsets.only(left: 0.019.toResponsive(context)),
-        height: 0.4.h(context),
+        height: 0.075.h(context),
         width: 0.2.w(context),
         decoration: BoxDecoration(
           border: Border.all(width: 1, color: kBlack),

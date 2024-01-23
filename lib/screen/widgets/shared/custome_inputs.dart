@@ -20,7 +20,7 @@ class CustomeInputs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 1.0.w(context),
-      height: 0.15.h(context),
+      height: 0.11.h(context),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,13 +31,15 @@ class CustomeInputs extends StatelessWidget {
                 fontWeight: FontWeight.w800,
                 fontSize: 0.015.toResponsive(context)),
           ),
-          Container(
-            height: 0.11.h(context),
-            width: 1.0.w(context),
-            child: TextFormField(
-              validator: validators,
-              obscureText: obscureText == true ? true : false,
-              decoration: const InputDecoration(),
+          Expanded(
+            child: Container(
+              height: 0.11.h(context),
+              width: 1.0.w(context),
+              child: TextFormField(
+                validator: validators,
+                obscureText: obscureText == true ? true : false,
+                decoration: const InputDecoration(),
+              ),
             ),
           ),
         ],

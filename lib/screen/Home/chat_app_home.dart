@@ -59,11 +59,11 @@ class _ChatAppsState extends State<ChatApps> {
         onPageChanged: _onPageChanged,
         controller: _pageController,
         physics: const BouncingScrollPhysics(),
-        children: const [
+        children: [
           ChatsScreen(),
-          CallScreen(),
-          PeopleScreen(),
-          StroryScreen(),
+          const CallScreen(),
+          const PeopleScreen(),
+          const StroryScreen(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

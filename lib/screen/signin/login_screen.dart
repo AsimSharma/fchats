@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:fchats/controller/auth_controller.dart';
 import 'package:fchats/screen/signup/register_screen.dart';
 import 'package:fchats/screen/widgets/custome_btns.dart';
 import 'package:fchats/screen/widgets/shared/authentications_icons_btns.dart';
@@ -25,9 +26,15 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   final emailEditingCtrl = TextEditingController();
   final passwordEditingCtrl = TextEditingController();
-
   final _formKey = GlobalKey<FormState>();
 
+  @override
+  void initState() {
+    Get.put(AuthControlller());
+    super.initState();
+  }
+
+  final authCtrl = Get.put(AuthControlller());
   //onSubmits
 
   @override
@@ -39,7 +46,7 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    final btnIconsLogo = [appleLogo, facebook, googleLogo];
+    final btnIconsLogo = [facebook, googleLogo, appleLogo];
     return Scaffold(
       body: SafeArea(
           child: SafeArea(
@@ -77,7 +84,25 @@ class _SignInState extends State<SignIn> {
                 SizedBox(
                   height: 0.005.h(context),
                 ),
-                socialIconsbtns(context, btnIconsLogo),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    AuthenticationsIconsButton(
+                      onPressed: () {},
+                      btnLogo: btnIconsLogo[0],
+                    ),
+                    AuthenticationsIconsButton(
+                      onPressed: () {
+                        AuthControlller;
+                      },
+                      btnLogo: btnIconsLogo[1],
+                    ),
+                    AuthenticationsIconsButton(
+                      onPressed: () {},
+                      btnLogo: btnIconsLogo[2],
+                    )
+                  ],
+                ),
                 SizedBox(
                   height: 0.032.h(context),
                 ),
@@ -85,46 +110,66 @@ class _SignInState extends State<SignIn> {
                 SizedBox(
                   height: 0.03.h(context),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomeInputs(
-                      hintText: "Email",
-                      textEditingController: emailEditingCtrl,
-                      validators: (value) {
-                        bool emailValid = RegExp(
-                                r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
-                            .hasMatch(value);
-                        if (value == null || value.isEmpty) {
-                          return "email cannot be empty";
-                        } else if (!emailValid) {
-                          return "checke Your Email is not valid";
-                        }
-                        return null;
-                      },
-                    ),
-                  ],
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomeInputs(
+                        hintText: "Email",
+                        textEditingController: emailEditingCtrl,
+                        validators: (value) {
+                          bool emailValid = RegExp(
+                                  r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
+                              .hasMatch(value);
+                          if (value == null || value.isEmpty) {
+                            return "email cannot be empty";
+                          } else if (!emailValid) {
+                            return "checke Your Email is not valid";
+                          }
+                          return null;
+                        },
+                      ),
+                      CustomeInputs(
+                        hintText: "Passwords",
+                        obscureText: false,
+                        textEditingController: passwordEditingCtrl,
+                        validators: (value) {
+                          if (value == null || value.isEmpty) {
+                            return "Password cannot be empty";
+                          } else if (value.length < 6) {
+                            return "Password must be gretter than 6";
+                          }
+                          return null;
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-                CustomeInputs(
-                  hintText: "Passwords",
-                  obscureText: true,
-                  textEditingController: passwordEditingCtrl,
-                  validators: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Password cannot be empty";
-                    } else if (value.length < 6) {
-                      return "Password must be gretter than 6";
-                    }
-                    return null;
-                  },
+                Align(
+                  alignment: Alignment.topRight,
+                  child: TextButton(
+                      onPressed: () {
+                        Get.to(() => const SignUp());
+                      },
+                      child: Text(
+                        "Forrget_password??",
+                        style: GoogleFonts.lato(
+                            fontSize: 0.015.toResponsive(context),
+                            fontWeight: FontWeight.w800,
+                            color: context.theme.primaryColor),
+                      )),
                 ),
                 SizedBox(
-                  height: 0.02.h(context),
+                  height: 0.001.h(context),
                 ),
                 CustomeBtns(
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Get.to(const SignUp());
+                      log(" email:${emailEditingCtrl.text}  pasword:${passwordEditingCtrl.text}");
+                      authCtrl.login(
+                          email: emailEditingCtrl.text,
+                          password: passwordEditingCtrl.text);
                     } else {
                       log("Checked your creidentatiol");
                     }
@@ -135,36 +180,34 @@ class _SignInState extends State<SignIn> {
                 SizedBox(
                   height: 0.01.h(context),
                 ),
-                TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Forgot password?",
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Don't have an accounts",
                       style: GoogleFonts.lato(
                           fontSize: 0.015.toResponsive(context),
                           fontWeight: FontWeight.w800,
-                          color: context.theme.primaryColor),
-                    ))
+                          color: context.theme.splashColor),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          Get.to(() => const SignUp());
+                        },
+                        child: Text(
+                          "SignUP",
+                          style: GoogleFonts.lato(
+                              fontSize: 0.015.toResponsive(context),
+                              fontWeight: FontWeight.w800,
+                              color: context.theme.primaryColor),
+                        )),
+                  ],
+                )
               ],
             ),
           ),
         ),
       )),
     );
-  }
-
-  SizedBox socialIconsbtns(BuildContext context, List<String> btnIconsLogo) {
-    return SizedBox(
-        height: 0.068.h(context),
-        width: 0.8.w(context),
-        child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: btnIconsLogo.length,
-          itemBuilder: (context, index) {
-            return AuthenticationsIconsButton(
-              onPressed: () {},
-              btnLogo: btnIconsLogo[index],
-            );
-          },
-        ));
   }
 }

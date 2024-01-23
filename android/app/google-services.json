@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "685884661191",
+    "project_id": "chatsapps-cee2d",
+    "storage_bucket": "chatsapps-cee2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685884661191:android:46245b91129311b9710de2",
+        "android_client_info": {
+          "package_name": "com.example.fchats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685884661191-04n3p225v436kpdangrgac3oklkbapdg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAm_dv8Sne-luQxpGG5qrMzxHHxRbN24eI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685884661191-04n3p225v436kpdangrgac3oklkbapdg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "685884661191-f480sfomjeef2drg2iqbvn25u6fuppe2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.fchats"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

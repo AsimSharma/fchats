@@ -1,9 +1,16 @@
-import 'package:fchats/screen/signup/register_screen.dart';
+import 'package:fchats/firebase_options.dart';
+import 'package:fchats/splash_screen.dart';
+
 import 'package:fchats/utils/theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -17,8 +24,7 @@ class MyApp extends StatelessWidget {
       // themeMode: ThemeMode.system,
       theme: ChatThemeData.myThemeLight,
       darkTheme: ChatThemeData.myThemeDark,
-
-      home: const SignUp(),
+      home: const SplashScreen(),
     );
   }
 }
