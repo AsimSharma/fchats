@@ -38,5 +38,8 @@ class ChatThemeData {
       switchTheme: SwitchThemeData(
           trackColor:
               MaterialStateProperty.resolveWith((states) => primaryColors),
-          thumbColor: MaterialStateProperty.all(kwhite)));
+          thumbColor: MaterialStateProperty.all(kwhite)),
+
+      //iconsTheme
+      iconTheme: const IconThemeData(color: kwhite));
 }

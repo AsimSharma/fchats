@@ -1,7 +1,9 @@
 import 'dart:developer';
-import 'package:fchats/screen/Home/chat_app_home.dart';
+
+import 'package:fchats/controller/users_controller.dart';
+import 'package:fchats/models/users_models.dart';
+import 'package:fchats/screen/Home/home_chatsApps.dart';
 import 'package:fchats/screen/signin/login_screen.dart';
-import 'package:fchats/screen/signup/register_screen.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,8 @@ class AuthControlller extends GetxController {
   final FirebaseAuth auth = FirebaseAuth.instance;
   final GoogleSignIn googleSign = GoogleSignIn();
 
+  var userList = <UserModel>[].obs;
+
   late Rx<User?> firebaseUser;
   late Rx<GoogleSignInAccount?> googleSignInAccount;
 
@@ -21,20 +25,6 @@ class AuthControlller extends GetxController {
   void onReady() {
     super.onReady();
     firebaseUser = Rx<User?>(auth.currentUser);
-    // log("${firebaseUser}");
-
-    // auth.authStateChanges().listen((user) {
-    //   if (user == null) {
-    //     log('User is currently signed out!');
-    //     Get.offAll(() => const SignUp());
-    //   } else {
-    //     log('User is signed in!');
-    //     Get.offAll(() => const ChatApps());
-    //   }
-    // });
-
-    // googleSignInAccount.bindStream(googleSign.onCurrentUserChanged);
-    // ever(googleSignInAccount, _setInitialScreenGoogle);
   }
 
   verifyUser() async {

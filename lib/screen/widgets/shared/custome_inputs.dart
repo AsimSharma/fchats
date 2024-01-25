@@ -4,12 +4,13 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomeInputs extends StatelessWidget {
-  const CustomeInputs(
-      {super.key,
-      required this.hintText,
-      this.obscureText = false,
-      required this.textEditingController,
-      required this.validators});
+  const CustomeInputs({
+    super.key,
+    required this.hintText,
+    this.obscureText = false,
+    required this.textEditingController,
+    required this.validators,
+  });
 
   final String hintText;
   final bool obscureText;
@@ -18,7 +19,7 @@ class CustomeInputs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 1.0.w(context),
       height: 0.11.h(context),
       child: Column(
@@ -36,6 +37,7 @@ class CustomeInputs extends StatelessWidget {
               height: 0.11.h(context),
               width: 1.0.w(context),
               child: TextFormField(
+                controller: textEditingController,
                 validator: validators,
                 obscureText: obscureText == true ? true : false,
                 decoration: const InputDecoration(),

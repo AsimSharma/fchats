@@ -1,6 +1,6 @@
 import 'dart:developer';
-
 import 'package:fchats/controller/auth_controller.dart';
+import 'package:fchats/screen/signin/widgets/login_form.dart';
 import 'package:fchats/screen/signup/register_screen.dart';
 import 'package:fchats/screen/widgets/custome_btns.dart';
 import 'package:fchats/screen/widgets/shared/authentications_icons_btns.dart';
@@ -60,7 +60,6 @@ class _SignInState extends State<SignIn> {
           color: context.theme.scaffoldBackgroundColor,
           child: SingleChildScrollView(
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
                   height: 0.015.h(context),
@@ -93,7 +92,7 @@ class _SignInState extends State<SignIn> {
                     ),
                     AuthenticationsIconsButton(
                       onPressed: () {
-                        AuthControlller;
+                        authCtrl.signInWithGoogle();
                       },
                       btnLogo: btnIconsLogo[1],
                     ),
@@ -110,42 +109,10 @@ class _SignInState extends State<SignIn> {
                 SizedBox(
                   height: 0.03.h(context),
                 ),
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CustomeInputs(
-                        hintText: "Email",
-                        textEditingController: emailEditingCtrl,
-                        validators: (value) {
-                          bool emailValid = RegExp(
-                                  r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
-                              .hasMatch(value);
-                          if (value == null || value.isEmpty) {
-                            return "email cannot be empty";
-                          } else if (!emailValid) {
-                            return "checke Your Email is not valid";
-                          }
-                          return null;
-                        },
-                      ),
-                      CustomeInputs(
-                        hintText: "Passwords",
-                        obscureText: false,
-                        textEditingController: passwordEditingCtrl,
-                        validators: (value) {
-                          if (value == null || value.isEmpty) {
-                            return "Password cannot be empty";
-                          } else if (value.length < 6) {
-                            return "Password must be gretter than 6";
-                          }
-                          return null;
-                        },
-                      ),
-                    ],
-                  ),
-                ),
+                LoginForm(
+                    formKey: _formKey,
+                    emailEditingCtrl: emailEditingCtrl,
+                    passwordEditingCtrl: passwordEditingCtrl),
                 Align(
                   alignment: Alignment.topRight,
                   child: TextButton(
@@ -184,7 +151,7 @@ class _SignInState extends State<SignIn> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don't have an accounts",
+                      "Don't have an accounts??",
                       style: GoogleFonts.lato(
                           fontSize: 0.015.toResponsive(context),
                           fontWeight: FontWeight.w800,

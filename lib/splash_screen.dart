@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:fchats/controller/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +15,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Get.put(AuthControlller());
-    AuthControlller().verifyUser();
+
+    Timer(const Duration(seconds: 1), () {
+      AuthControlller().verifyUser();
+    });
+
     super.initState();
   }
 
@@ -22,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return const Scaffold(
       body: SafeArea(
         child: Center(
-          child: Text("Loading...."),
+          child: Text("Loading......"),
         ),
       ),
     );
