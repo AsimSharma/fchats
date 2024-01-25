@@ -6,12 +6,9 @@ import 'package:fchats/screen/widgets/custome_btns.dart';
 import 'package:fchats/screen/widgets/shared/authentications_icons_btns.dart';
 import 'package:fchats/screen/widgets/or_divider.dart';
 import 'package:fchats/screen/widgets/shared/back_app_bar.dart';
-import 'package:fchats/screen/widgets/shared/custome_inputs.dart';
 import 'package:fchats/screen/widgets/shared/login_registe_texttitle.dart';
 import 'package:fchats/utils/extension/responsive.dart';
-
 import 'package:fchats/utils/styles/images_links.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -1,14 +1,21 @@
+import 'package:fchats/screen/widgets/shared/back_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CallScreen extends StatelessWidget {
   const CallScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Column(
-          children: [Text("this isCallScreen ")],
+          children: [
+            BackAppBar(onPressed: () {
+              Get.back();
+            }),
+            Text("this isCallScreen ")
+          ],
         ),
       ),
     );

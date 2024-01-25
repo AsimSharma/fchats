@@ -12,24 +12,7 @@ class StroryScreen extends StatelessWidget {
       key: key,
       body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            GestureDetector(
-              child: Tooltip(message: "Long press to copy", child: Text(copy)),
-              onLongPress: () {
-                Clipboard.setData(ClipboardData(text: copy));
-              },
-            ),
-
-            SizedBox(
-              height: 100,
-            ),
-            const Tooltip(
-              message: "Hello every one ",
-              child: Text("Helooo"),
-            ),
-            // const TextField(
-            //     decoration: InputDecoration(hintText: "Paste Here")),
-          ]),
+          children: <Widget>[Text("")]),
     );
   }
 }

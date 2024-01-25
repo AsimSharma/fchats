@@ -4,7 +4,7 @@ import 'package:fchats/screen/signin/login_screen.dart';
 import 'package:fchats/screen/signup/widgets/register_form.dart';
 import 'package:fchats/screen/widgets/custome_btns.dart';
 import 'package:fchats/screen/widgets/shared/back_app_bar.dart';
-import 'package:fchats/screen/widgets/shared/custome_inputs.dart';
+
 import 'package:fchats/screen/widgets/shared/login_registe_texttitle.dart';
 import 'package:fchats/utils/extension/responsive.dart';
 import 'package:flutter/material.dart';

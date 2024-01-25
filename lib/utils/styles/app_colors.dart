@@ -9,4 +9,6 @@ const Color textDecpC = Color(0xff797C7B);
 const Color dividerColors = Color(0xff797C7B);
 const Color secondarColor = Color.fromARGB(255, 232, 232, 232);
 
+const Color messageTileBgColor = Color(0xffF2F7FB);
+
 const String appName = "Chatbox";

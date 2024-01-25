@@ -140,6 +140,15 @@ class _SettingScreenState extends State<SettingScreen> {
                 icons: Icons.topic,
                 titleText: "User Name",
                 subTitleText: "bibek@gmail.com",
+              ),
+              ListOptionsMenu(
+                onPressed: () {
+                  auth.signOut();
+                },
+                bgColor: primaryColors,
+                icons: Icons.logout_outlined,
+                titleText: "logOut",
+                subTitleText: "bibek@gmail.com",
               )
             ],
           ),
