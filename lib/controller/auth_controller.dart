@@ -28,15 +28,15 @@ class AuthControlller extends GetxController {
   }
 
   verifyUser() async {
-    auth.authStateChanges().listen((user) {
-      if (user == null) {
-        log('User is currently signed out!');
-        Get.offAll(() => const SignIn());
-      } else {
-        log('User is signed in!');
-        Get.offAll(() => const ChatApps());
-      }
-    });
+    // auth.authStateChanges().listen((user) {
+    //   if (user == null) {
+    //     log('User is currently signed out!');
+    //     Get.offAll(() => const SignIn());
+    //   } else {
+    //     log('User is signed in!');
+    //     Get.offAll(() => const ChatApps());
+    //   }
+    // });
   }
 
   signInWithGoogle() async {

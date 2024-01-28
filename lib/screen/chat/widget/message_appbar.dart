@@ -1,5 +1,6 @@
 import 'package:fchats/screen/call/call.dart';
 import 'package:fchats/screen/chat/models/friends_chat_model.dart';
+import 'package:fchats/screen/chat/pages/incommig_calls.dart';
 import 'package:fchats/screen/chat/pages/video_calls.dart';
 import 'package:fchats/screen/widgets/shared/mero_icons.dart';
 
@@ -64,9 +65,9 @@ class MessageAppBar extends StatelessWidget {
               width: 0.012.w(context),
             ),
             MeroIcons(
-              myIcons: callIcon,
+              myIcons: calls3,
               onPressed: () {
-                Get.to(() => const CallScreen());
+                Get.to(() => const IncommingCalls());
               },
             ),
             SizedBox(

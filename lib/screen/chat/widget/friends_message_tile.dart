@@ -1,8 +1,7 @@
-import 'package:fchats/screen/chat/widget/profile_stack.dart';
 import 'package:fchats/screen/widgets/shared/profile_stacks.dart';
 import 'package:fchats/utils/extension/responsive.dart';
 import 'package:fchats/utils/styles/app_colors.dart';
-import 'package:fchats/utils/styles/images_links.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

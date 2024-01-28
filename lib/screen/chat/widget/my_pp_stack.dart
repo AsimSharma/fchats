@@ -24,10 +24,9 @@ class MyProfileStack extends StatelessWidget {
               width: 0.21.w(context),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  image: DecorationImage(
-                      fit: BoxFit.cover,
-                      image: NetworkImage(auth.currentUser!.photoURL ??
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWd2Er6aGk46GpGePsuN9SgkYasGWZfc0L2jtrg4dSenLmtdD7kcWxTKaG0qp1osENax4&usqp=CAU"))),
+                  image: DecorationImage(fit: BoxFit.cover, image: NetworkImage(
+                      //auth.currentUser!.photoURL ??
+                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWd2Er6aGk46GpGePsuN9SgkYasGWZfc0L2jtrg4dSenLmtdD7kcWxTKaG0qp1osENax4&usqp=CAU"))),
             ),
             Positioned(
                 bottom: 0,

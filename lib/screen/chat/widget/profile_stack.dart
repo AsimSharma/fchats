@@ -21,12 +21,15 @@ class FriendsProfileStack extends StatelessWidget {
     return Column(
       children: [
         PPStack(
-          profilePic: friendschatslist[index].friendsPP,
-          height: 0.09.h(context),
+          profilePic:
+              // friendschatslist[index].friendsPP ??
+              "assets/images/users.png",
+          height: 0.08.h(context),
           width: 0.2.w(context),
         ),
         Text(
-          fname,
+          // fname ??
+          "Bibek",
           style: GoogleFonts.poppins(
               color: context.theme.splashColor,
               fontSize: 0.015.toResponsive(context)),
