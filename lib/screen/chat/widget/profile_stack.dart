@@ -1,6 +1,7 @@
 import 'package:fchats/screen/chat/models/friends_chat_model.dart';
 import 'package:fchats/screen/widgets/shared/profile_stacks.dart';
 import 'package:fchats/utils/extension/responsive.dart';
+import 'package:fchats/utils/styles/images_links.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,7 +24,7 @@ class FriendsProfileStack extends StatelessWidget {
         PPStack(
           profilePic:
               // friendschatslist[index].friendsPP ??
-              "assets/images/users.png",
+              usersTeams,
           height: 0.08.h(context),
           width: 0.2.w(context),
         ),

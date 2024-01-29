@@ -23,6 +23,11 @@ const String dissConnects = "assets/icons/avoidcall.png";
 const String incommingCall = "assets/icons/incommingcall.png";
 const String outGoingCall = "assets/icons/outgoingcall.png";
 const String calls3 = "assets/icons/call3.png";
+const String alaram = "assets/icons/alaram.png";
+const String callGreenIcons = "assets/icons/callsgreen.png";
+const String messageIcons = "assets/icons/messageIcons.png";
+
+const String usersTeams = "assets/icons/users.png";
 
 //images
 
@@ -34,3 +39,4 @@ const String friends5 = "assets/images/f5.png";
 const String friends6 = "assets/images/f6.png";
 const String meroprofile = "assets/images/meroprofile.jpg";
 const String profilePP1 = "assets/images/profile1.png";
+const String videocallImages = "assets/images/videoimages.png";

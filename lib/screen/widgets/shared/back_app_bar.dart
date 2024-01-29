@@ -17,7 +17,12 @@ class BackAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        IconButton(onPressed: onPressed, icon: const Icon(Icons.arrow_back)),
+        IconButton(
+            onPressed: onPressed,
+            icon: Icon(
+              Icons.arrow_back,
+              color: context.theme.splashColor,
+            )),
         SizedBox(
           width: 0.012.w(context),
         ),

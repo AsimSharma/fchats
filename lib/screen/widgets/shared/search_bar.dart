@@ -34,7 +34,7 @@ class SearchBarContainer extends StatelessWidget {
             width: 0.12.w(context),
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/searchicons.png"),
+                image: AssetImage("assets/icons/searchicons.png"),
               ),
             ),
           ),
